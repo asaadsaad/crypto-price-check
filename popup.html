@@ -1,0 +1,288 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+  <head>
+      <link rel="stylesheet" type="text/css" href="./css/materialize.css">
+      <link rel="stylesheet" type="text/css" href="./css/font-awesome.css">
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="./node_modules/semantic-ui-flag/flag.css">
+    <title>CryptoPrice Check</title>
+  </head>
+  <body>
+     <h5 style="text-align:center">Live Cryptocurrency Rates</h5>
+    <div class="container">
+      <table class="highlight">
+        <thead>
+          <tr>
+              <th>Name</th>
+              <th>GBP <i class="gb flag"></i></th>
+              <th>USD <i class="us flag"></i></th>
+              <th>EUR <i class="eu flag"></i></th>
+
+          </tr>
+        </thead>
+        <body>
+          <tr>
+            <td><b>Bitcoin (BTC)</b></td>
+            <td id="bitcoingbp">
+              <div class="preloader-wrapper small active">
+                <div class="spinner-layer spinner-green-only">
+                  <div class="circle-clipper left">
+                    <div class="circle"></div>
+                  </div><div class="gap-patch">
+                <div class="circle"></div>
+              </div><div class="circle-clipper right">
+            <div class="circle"></div>
+         </div>
+        </div>
+        <td id="bitcoinusd">
+          <div class="preloader-wrapper small active">
+            <div class="spinner-layer spinner-green-only">
+              <div class="circle-clipper left">
+                <div class="circle"></div>
+              </div><div class="gap-patch">
+            <div class="circle"></div>
+          </div><div class="circle-clipper right">
+        <div class="circle"></div>
+     </div>
+    </div>
+    <td id="bitcoineur">
+      <div class="preloader-wrapper small active">
+        <div class="spinner-layer spinner-green-only">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div><div class="gap-patch">
+        <div class="circle"></div>
+      </div><div class="circle-clipper right">
+    <div class="circle"></div>
+ </div>
+</div>
+      </td>
+          </tr>
+          <tr>
+            <td><b>Bitcoin Cash (BCH)</b></td>
+            <td id="btcashgbp">
+              <div class="preloader-wrapper small active">
+                <div class="spinner-layer spinner-green-only">
+                  <div class="circle-clipper left">
+                    <div class="circle"></div>
+                  </div><div class="gap-patch">
+                <div class="circle"></div>
+              </div><div class="circle-clipper right">
+            <div class="circle"></div>
+         </div>
+      </div>
+    </div>
+          <td id="btcashusd">
+            <div class="preloader-wrapper small active">
+              <div class="spinner-layer spinner-green-only">
+                <div class="circle-clipper left">
+                  <div class="circle"></div>
+                </div><div class="gap-patch">
+              <div class="circle"></div>
+            </div><div class="circle-clipper right">
+          <div class="circle"></div>
+       </div>
+      </div>
+      </div>
+      <td id="btcasheur">
+        <div class="preloader-wrapper small active">
+          <div class="spinner-layer spinner-green-only">
+            <div class="circle-clipper left">
+              <div class="circle"></div>
+            </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+      <div class="circle"></div>
+   </div>
+  </div>
+  </div>
+        </td>
+          </tr>
+          <tr>
+            <td><b>Ethereum (ETH)</b></td>
+            <td id="ethereumgbp">
+              <div class="preloader-wrapper small active">
+                <div class="spinner-layer spinner-green-only">
+                  <div class="circle-clipper left">
+                    <div class="circle"></div>
+                  </div><div class="gap-patch">
+                <div class="circle"></div>
+              </div><div class="circle-clipper right">
+            <div class="circle"></div>
+         </div>
+      </div>
+    </div>
+    <td id="ethereumusd">
+              <div class="preloader-wrapper small active">
+                <div class="spinner-layer spinner-green-only">
+                  <div class="circle-clipper left">
+                    <div class="circle"></div>
+                  </div><div class="gap-patch">
+                <div class="circle"></div>
+              </div><div class="circle-clipper right">
+            <div class="circle"></div>
+         </div>
+        </div>
+        </div>
+        <td id="ethereumeur">
+                  <div class="preloader-wrapper small active">
+                    <div class="spinner-layer spinner-green-only">
+                      <div class="circle-clipper left">
+                        <div class="circle"></div>
+                      </div><div class="gap-patch">
+                    <div class="circle"></div>
+                  </div><div class="circle-clipper right">
+                <div class="circle"></div>
+             </div>
+            </div>
+            </div>
+        </td>
+          </tr>
+          <tr>
+            <td><b>Litecoin (LTC)</b></td>
+            <td id="litecoingbp">
+              <div class="preloader-wrapper small active">
+                <div class="spinner-layer spinner-green-only">
+                  <div class="circle-clipper left">
+                    <div class="circle"></div>
+                  </div><div class="gap-patch">
+                <div class="circle"></div>
+              </div><div class="circle-clipper right">
+            <div class="circle"></div>
+             </div>
+          </div>
+        </div>
+          <td id="litecoinusd">
+            <div class="preloader-wrapper small active">
+              <div class="spinner-layer spinner-green-only">
+                <div class="circle-clipper left">
+                  <div class="circle"></div>
+                </div><div class="gap-patch">
+              <div class="circle"></div>
+            </div><div class="circle-clipper right">
+          <div class="circle"></div>
+       </div>
+      </div>
+      </div>
+      <td id="litecoineur">
+        <div class="preloader-wrapper small active">
+          <div class="spinner-layer spinner-green-only">
+            <div class="circle-clipper left">
+              <div class="circle"></div>
+            </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+      <div class="circle"></div>
+   </div>
+  </div>
+  </div>
+       </td>
+          </tr>
+          <tr>
+            <td><b>Ripple (XRP)</b></td>
+            <td id="ripplegbp">
+              <div class="preloader-wrapper small active">
+                <div class="spinner-layer spinner-green-only">
+                  <div class="circle-clipper left">
+                    <div class="circle"></div>
+                  </div><div class="gap-patch">
+                <div class="circle"></div>
+              </div><div class="circle-clipper right">
+            <div class="circle"></div>
+               </div>
+            </div>
+          </div>
+          <td id="rippleusd">
+            <div class="preloader-wrapper small active">
+              <div class="spinner-layer spinner-green-only">
+                <div class="circle-clipper left">
+                  <div class="circle"></div>
+                </div><div class="gap-patch">
+              <div class="circle"></div>
+            </div><div class="circle-clipper right">
+          <div class="circle"></div>
+       </div>
+      </div>
+      </div>
+      <td id="rippleeur">
+        <div class="preloader-wrapper small active">
+          <div class="spinner-layer spinner-green-only">
+            <div class="circle-clipper left">
+              <div class="circle"></div>
+            </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+      <div class="circle"></div>
+   </div>
+  </div>
+  </div>
+       </td>
+    </tr><tr>
+      <td><b>IOTA (IOT)</b></td>
+      <td id="iotgbp">
+        <div class="preloader-wrapper small active">
+          <div class="spinner-layer spinner-green-only">
+            <div class="circle-clipper left">
+              <div class="circle"></div>
+            </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+      <div class="circle"></div>
+         </div>
+      </div>
+    </div>
+    <td id="iotusd">
+      <div class="preloader-wrapper small active">
+        <div class="spinner-layer spinner-green-only">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div><div class="gap-patch">
+        <div class="circle"></div>
+      </div><div class="circle-clipper right">
+    <div class="circle"></div>
+ </div>
+</div>
+</div>
+<td id="ioteur">
+  <div class="preloader-wrapper small active">
+    <div class="spinner-layer spinner-green-only">
+      <div class="circle-clipper left">
+        <div class="circle"></div>
+      </div><div class="gap-patch">
+    <div class="circle"></div>
+  </div><div class="circle-clipper right">
+<div class="circle"></div>
+</div>
+</div>
+</div>
+ </td>
+</tr>
+  </tbody>
+      </table>
+    </div>
+  </body>
+  <footer class="page-footer">
+    <div class="container">
+    <ul>
+      <li><p class="black-text" style="text-align:center">Live Cryptocurrency Data Provided by <b><a style="outline: none;" class="black-text" href="https://www.cryptocompare.com/">CryptoCompare</a></b></p></li>
+    </ul>
+  </div>
+      <div class="footer-copyright">
+      <div class="container">
+        <ul>
+          <li><a class="black-text" href="https://jameshamann.com"><b><p style="text-align:center">Created by James Hamann</p></b></a></li>
+      </ul>
+      </div>
+    </div>
+  </footer>
+      <script src="./js/jquery-3.2.1.min.js"></script>
+      <script src="./js/popup.js"></script>
+      <script src="https://cdn.jsdelivr.net/semantic-ui/2.2.13/semantic.min.js"></script>
+
+</html>
